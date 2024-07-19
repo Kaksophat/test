@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h2{
+            font-size: 30px;
+            margin-bottom: 20px;
+            letter-spacing: 4px;
+            color: rgb(103, 41, 78);
+        }
+        main{
+            position: relative;
+            width: 700px;
+            height: 450px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+        }
+        button{
+            position: absolute;
+            width: 100px;
+            font-size: 30px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            outline: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 10px gray;
+        }
+        button:nth-child(1){
+            left: 200px;
+            color: rgb(255, 73, 182);
+            background-color: rgb(255, 255, 255);
+            border: 1px solid rgb(255, 73, 182);
+        }
+        button:nth-child(2){
+            position: absolute;
+            display: none;
+            /* margin: auto; */
+            right: 340px;
+            color: white;
+            background-color: rgb(15, 5, 11);
+        }
+        button:nth-child(3){
+            right:  250px;
+            color: white;
+            background-color: rgb(     255, 73, 182);;
+        }
+        button:nth-child(2) .active{
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>I LOVE YOU <br>
+        DO YOU LOVE ME ?
+        </h2>
+        <div class="btn">
+         <button class="Yes">Yes</button>
+         <button class="back">Back</button>
+         <button class="No">No</button>
+         
+        </div>
+    </main>
+    <script>
+        const No = document.querySelector(".No");
+        const Yes= document.querySelector(".Yes");
+        const h2 = document.querySelector("h2");
+        const back= document.querySelector(".back");
+        No.addEventListener("click", ()=>{
+        //     function Get(){
+        //     return Math.floor(Math.random() * 300);
+
+        // }
+        // No.style.top= Get() + "px";
+        // No.style.left= Get() + "px";
+        h2.innerText = "YES I DO !";
+        Yes.style.display= "none"
+        No.style.display ="none"
+        back.style.display = "block";
+
+        })
+       Yes.addEventListener("click", ()=>{
+          h2.innerText= "YES I DO !";
+          No.style.display= "none";
+          Yes.style.margin= "auto";
+          Yes.style.display= "none";
+          back.style.display = "block";
+       }
+       )
+       back.addEventListener("click", ()=>{
+        Yes.style.display= "block"
+        No.style.display ="block"
+        back.style.display = "none"
+        h2.innerHTML = "I LOVE YOU <br> DO YOU LOVE ME ?"
+         })
+
+       
+            
+        
+      
+
+    </script>
+</body>
+</html>
